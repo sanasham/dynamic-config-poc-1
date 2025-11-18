@@ -1,0 +1,30 @@
+{
+  "features": {
+    "enableUserAPI": true,
+    "enableAuth": false
+  },
+  "rateLimit": {
+    "windowMs": 50000,
+    "max": 5
+  },
+  "responseMode": "full",
+  "maintenance": {
+    "readOnly": false
+  },
+  "routes": {
+    "enablePaymentsAPI": true
+  },
+  "backendMode": "mock",
+  "language": "en",
+  "validationRules": {
+    "requireEmail": false
+  },
+  "logging": {
+    "level": "debug"
+  },
+  "ui": {
+    "darkMode": false,
+    "language": "es"
+  },
+  "configVersion": 1763423260217
+}
