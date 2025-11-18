@@ -49,7 +49,7 @@ export default function App() {
   const saveConfig = useCallback(async () => {
     try {
       const parsed = JSON.parse(editing);
-      await axios.put(`${CONFIG_SERVER}/config`, parsed, {
+      await axios.post(`${CONFIG_SERVER}/update`, parsed, {
         headers: { Authorization: `Bearer ${ADMIN_TOKEN}` },
       });
       alert('Saved');
@@ -59,8 +59,8 @@ export default function App() {
   }, [editing]);
 
   const toggleDark = useCallback(async () => {
-    await axios.put(
-      `${CONFIG_SERVER}/config`,
+    await axios.post(
+      `${CONFIG_SERVER}/update`,
       { ui: { ...config.ui, darkMode: !config.ui?.darkMode } },
       { headers: { Authorization: `Bearer ${ADMIN_TOKEN}` } }
     );
@@ -68,8 +68,8 @@ export default function App() {
 
   const changeLanguage = useCallback(
     async (l) => {
-      await axios.put(
-        `${CONFIG_SERVER}/config`,
+      await axios.post(
+        `${CONFIG_SERVER}/update`,
         { ui: { ...config.ui, language: l } },
         { headers: { Authorization: `Bearer ${ADMIN_TOKEN}` } }
       );
@@ -78,8 +78,8 @@ export default function App() {
   );
 
   const toggleAuth = useCallback(async () => {
-    await axios.put(
-      `${CONFIG_SERVER}/config`,
+    await axios.post(
+      `${CONFIG_SERVER}/update`,
       {
         features: {
           ...config.features,

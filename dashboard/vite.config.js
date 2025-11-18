@@ -5,7 +5,7 @@ export default defineConfig({
   server: {
     port: 5173,
     proxy: {
-      '/config': 'http://localhost:4000',
+      '/update': 'http://localhost:4000',
       '/events': 'http://localhost:4000',
     },
   },
